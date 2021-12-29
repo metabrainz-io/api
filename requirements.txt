@@ -2,9 +2,9 @@ django==3.2.4
 djangorestframework==3.12.4
 django-cors-headers
 djangorestframework-simplejwt
-django-mysql==3.9
 django-cron==0.5.1
-mysqlclient==2.0.1
+#django-mysql==3.9
+#mysqlclient==2.0.1
 pika==1.1.0
 JSONField
 eth-utils>=1.2.0

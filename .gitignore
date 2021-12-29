@@ -1,0 +1,12 @@
+# folders
+env/
+restapi/restapi/__pycache__/
+restapi/accounts/__pycache__/
+restapi/token_nfts/__pycache__/
+restapi/restapi/migrations/
+restapi/accounts/migrations/
+restapi/token_nfts/migrations/
+
+# files
+.dbdata
+notes.txt

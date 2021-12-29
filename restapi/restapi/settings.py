@@ -8,9 +8,10 @@ SECRET_KEY = 'django-insecure-&1l4fw48=h#_6q!o=1f2^uja=6_5(os@rp=a1!2v#)gccxoc1p
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.0.103"]
+# ALLOWED_HOSTS = ["192.168.0.103"]
+ALLOWED_HOSTS = []
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:8080', 'http://127.0.0.1:8000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -103,14 +104,14 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'admin',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'db',
-        'PORT': 3306
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'admin',
+        # 'USER': 'root',
+        # 'PASSWORD': 'root',
+        # 'HOST': 'db',
+        # 'PORT': 3306
     }
 }
 

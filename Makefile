@@ -1,23 +1,15 @@
 DIR := $(CURDIR)
 
 default: build up
+destroy: kill remove
 
 build:
-	docker build -t doselabs/api_test -f Dockerfile .
-
+	docker build -t metabrains/api_test -f Dockerfile .
 up:
-	docker run -d -p 8000:8000 -v $(DIR):/api --name dlapi_test doselabs/api_test
-
-attach:
-	docker exec -it api bash
-
-down: kill remove
-
-kill:
-	docker container kill api
-
-remove:
-	docker container rm api
-
+	docker run -d -p 8000:8000 -v $(DIR):/api --name mb_api metabrains/api_test
 dev:
-	docker run -it --rm -p 8000:8000 -v $(DIR):/api --name dlapi_test doselabs/api_test bash
+	docker run -it --rm -p 8000:8000 -v $(DIR):/api --name mb_api metabrains/api_test bash
+kill:
+	docker container kill mb_api
+remove:
+	docker container rm mb_api
