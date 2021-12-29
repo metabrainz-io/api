@@ -8,7 +8,6 @@ SECRET_KEY = 'django-insecure-&1l4fw48=h#_6q!o=1f2^uja=6_5(os@rp=a1!2v#)gccxoc1p
 
 DEBUG = True
 
-# ALLOWED_HOSTS = ["192.168.0.103"]
 ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
@@ -17,7 +16,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework.permissions.IsAuthenticated', #NOTE: Not used, instead jwt
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
@@ -44,9 +42,8 @@ CRON_CLASSES = [
 ]
 
 # CRONJOBS = [
-#     ('* * * * *', 'cron.my_cron_job'),
-#     ('* * * * *', 'restapi.cron.my_cron_job'),
-#     ('* * * * *', 'restapi.restapi.cron.my_cron_job')
+#     ('* * * * *', 'cron.example_job'),
+#     ('* * * * *', 'restapi.cron.example_job')
 # ]
 
 # Token lifetime format/duration
@@ -106,12 +103,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3'
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'admin',
-        # 'USER': 'root',
-        # 'PASSWORD': 'root',
-        # 'HOST': 'db',
-        # 'PORT': 3306
     }
 }
 

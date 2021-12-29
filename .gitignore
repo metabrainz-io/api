@@ -1,5 +1,6 @@
 # folders
 env/
+restapi/__pycache__/
 restapi/restapi/__pycache__/
 restapi/accounts/__pycache__/
 restapi/token_nfts/__pycache__/
