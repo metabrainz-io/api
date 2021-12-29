@@ -1,0 +1,20 @@
+[
+    {
+        "model": "accounts.Roles",
+        "pk": 1,
+        "fields": {
+            "role_id": "1",
+            "role_title": "admin",
+            "is_admin": 1
+        }
+    },
+    {
+        "model": "accounts.Roles",
+        "pk": 2,
+        "fields": {
+            "role_id": "2",
+            "role_title": "user",
+            "is_admin": 0
+        }
+    }
+]

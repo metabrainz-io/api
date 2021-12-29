@@ -1,0 +1,12 @@
+[
+    {
+        "model": "accounts.UserAccount",
+        "pk": 2,
+        "fields": {
+            "c_addr": "0x1a2b9b146d9b8b3d3866f66aa5f53c2e08f0d054",
+            "is_active": 1,
+            "is_admin": 0,
+            "role_id": 2
+        }
+    }
+]
