@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from datetime import timedelta
 # import django_crontab
@@ -8,9 +9,11 @@ SECRET_KEY = 'django-insecure-&1l4fw48=h#_6q!o=1f2^uja=6_5(os@rp=a1!2v#)gccxoc1p
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+HOST, PORT = os.getenv("API_HOST"), os.getenv("API_PORT")
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
+ALLOWED_HOSTS = [HOST, 'localhost']
+
+CORS_ALLOWED_ORIGINS = [f"http://localhost:{str(PORT)}", f"http://127.0.0.1:{str(PORT)}"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -121,6 +124,41 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# More details http://docs.djangoproject.com/en/dev/topics/logging.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'file': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': f"{os.getenv('API_ROOT')}/logs/django.log"
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }    
+    },
+    'loggers': {        
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -132,5 +170,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

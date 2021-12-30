@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 $ROOT_DIR+restapi/manage.py dumpdata > $ROOT_DIR+restapi/fixtures/backup.json
+python3 $API_ROOT+restapi/manage.py dumpdata > $API_ROOT+restapi/fixtures/backup.json

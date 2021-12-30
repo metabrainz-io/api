@@ -1,6 +1,6 @@
 #!/bin/bash
 
 rm -rf \
-$ROOT_DIR+restapi/db.sqlite3 \
-$ROOT_DIR+restapi/accounts/migrations/ \
-$ROOT_DIR+restapi/token_nfts/migrations/ \
+$API_ROOT+restapi/db.sqlite3 \
+$API_ROOT+restapi/accounts/migrations/ \
+$API_ROOT+restapi/token_nfts/migrations/ \

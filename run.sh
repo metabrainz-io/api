@@ -1,3 +1,7 @@
 #!/bin/bash
 
-python3 restapi/manage.py runserver 0.0.0.0:8000
+uwsgi --ini $API_ROOT/restapi/restapi.ini
+service nginx reload && service nginx restart
+
+# if file exists
+tail -f $API_ROOT/logs/uwsgi-emperor.log

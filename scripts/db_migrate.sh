@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python3 $ROOT_DIR+restapi/manage.py makemigrations
-python3 $ROOT_DIR+restapi/manage.py migrate
+python3 $API_ROOT+restapi/manage.py makemigrations
+python3 $API_ROOT+restapi/manage.py migrate
