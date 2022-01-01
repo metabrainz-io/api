@@ -11,5 +11,6 @@ class TokenNFTSerializer(serializers.ModelSerializer):
             'attributes', 
             'quantity',
             'img_src',
-            'claimable'
+            'claimable',
+            'links'
         )
