@@ -1,5 +1,6 @@
 # folders
 env/
+tmp/
 restapi/__pycache__/
 restapi/restapi/__pycache__/
 restapi/accounts/__pycache__/
@@ -14,5 +15,6 @@ restapi/fixtures/*backup*
 
 # files
 notes.txt
+leases.txt
 restapi/logs/*.log
 restapi/db.sqlite3
