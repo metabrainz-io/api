@@ -1,18 +1,3 @@
-# folders
-env/
-restapi/__pycache__/
-restapi/restapi/__pycache__/
-restapi/accounts/__pycache__/
-restapi/token_nfts/__pycache__/
-restapi/restapi/migrations/
-restapi/accounts/migrations/
-restapi/token_nfts/migrations/
-restapi/static/
-restapi/media/
-restapi/fixtures/*backup*
-
-
-# files
+# local files
 notes.txt
-restapi/logs/*.log
-restapi/db.sqlite3
+leases.txt

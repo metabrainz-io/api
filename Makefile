@@ -1,15 +1,9 @@
-DIR := $(CURDIR)
-
-default: build up
-destroy: kill remove
+DIR := ${CURDIR}
 
 build:
-	docker build -t metabrains/api_test -f Dockerfile .
-up:
-	docker run -d -p 5000:5000 -v $(DIR):/api --name mb_api metabrains/api_test
-dev:
-	docker run -it --rm -p 5000:5000 -v $(DIR):/api --name mb_api metabrains/api_test bash
-kill:
-	docker container kill mb_api
-remove:
-	docker container rm mb_api
+	docker build -t metabrainz/mb_api_base -f Dockerfile .
+test:
+	docker run -d --mount type=bind,source=$(DIR)/api,target=/api -p 5000:5000 --name mb_api_base metabrainz/mb_api_base
+publish:
+	docker tag metabrainz/mb_api_base bwo0877hpnza/mb_api_base:0.1
+	docker push bwo0877hpnza/mb_api_base:0.1
