@@ -14,15 +14,9 @@ set +b
 
 source "${API_ROOT}/env/bin/activate"
 
-# Make
-python3 "${API_ROOT}/restapi/manage.py" makemigrations accounts token_nfts
-python3 "${API_ROOT}/restapi/manage.py" makemigrations
-
-# Migrate
-python3 "${API_ROOT}/restapi/manage.py" migrate
-
-# Restore
-python3 "${API_ROOT}/restapi/manage.py" loaddata "${API_ROOT}/restapi/fixtures/roles.json"
+# Load
+# FIXME:
+# File checking and arg passing
 python3 "${API_ROOT}/restapi/manage.py" loaddata "${API_ROOT}/restapi/fixtures/backup.json"
 
 deactivate
