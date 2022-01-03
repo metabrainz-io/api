@@ -87,6 +87,18 @@ class TokenNFTPrivateViewSet(viewsets.ViewSet):
         print(f"Saved tokenNFT: {tokenNFT.tid}, {tokenNFT.name}, {tokenNFT.descr}, {tokenNFT.attributes}, {tokenNFT.quantity}, {tokenNFT.links}, {tokenNFT.claimable}")
         return Response(["add token"], status=status.HTTP_200_OK)
 
+    def delete_token_nfts(self, request, id):
+        try:
+            if not TokenNFT.objects.filter(tid=id).exists():
+                raise ValueError(f"No matching Token NFT's for id '{id}' found.")
+        except Exception as e:
+            print(f"Err: {e}")
+            return Response([], status=status.HTTP_404_NOT_FOUND)
+
+        tokenNFT = TokenNFT.objects.get(tid=id)
+        tokenNFT.delete()
+        return Response([], status=status.HTTP_200_OK)
+
 class TokenNFTPublicViewSet(viewsets.ViewSet):
 
     def get_token_nfts(self, request, id):

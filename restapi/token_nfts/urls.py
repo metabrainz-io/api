@@ -8,6 +8,9 @@ urlpatterns = [
     path('p/asset/<str:id>', TokenNFTPrivateViewSet.as_view({
         'get': 'get_token_nfts',
     })),
+    path('p/del_asset/<str:id>', TokenNFTPrivateViewSet.as_view({
+        'delete': 'delete_token_nfts',
+    })),
     path('p/add_asset', TokenNFTPrivateViewSet.as_view({
         'post': 'add_token_nfts',
     })),
