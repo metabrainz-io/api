@@ -23,6 +23,8 @@ python3 "${API_ROOT}/restapi/manage.py" migrate
 
 # Restore
 python3 "${API_ROOT}/restapi/manage.py" loaddata "${API_ROOT}/restapi/fixtures/roles.json"
-python3 "${API_ROOT}/restapi/manage.py" loaddata "${API_ROOT}/restapi/fixtures/backup.json"
+
+# FIXME: Err installing fixtures: "The row in table 'token_blacklist_outstandingtoken' with primary key '1' has an invalid foreign key: token_blacklist_outstandingtoken..."
+#python3 "${API_ROOT}/restapi/manage.py" loaddata "${API_ROOT}/restapi/fixtures/backup.json"
 
 deactivate

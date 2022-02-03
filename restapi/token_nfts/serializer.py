@@ -6,11 +6,12 @@ class TokenNFTSerializer(serializers.ModelSerializer):
         model = TokenNFT
         fields = (
             'tid',
-            'name', 
-            'descr',
-            'attributes', 
-            'quantity',
-            'img_src',
+            'name',
+            'uri',
+            'mint_max',
+            'mint_limit',
+            'mint_cur',
             'claimable',
+            'claimable_amount',
             'links'
         )

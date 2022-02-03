@@ -11,11 +11,25 @@ DEBUG = True
 
 HOST, PORT = os.getenv("API_HOST"), os.getenv("API_PORT")
 
-ALLOWED_HOSTS = [HOST, 'localhost']
+ALLOWED_HOSTS = [HOST, 'localhost', '192.168.0.103']
 
-CORS_ALLOWED_ORIGINS = [f"http://localhost:{str(PORT)}", f"http://127.0.0.1:{str(PORT)}"]
+CORS_ALLOWED_ORIGINS = [f"http://localhost:{str(PORT)}", f"http://127.0.0.1:{str(PORT)}", f"https://192.168.0.103:{str(PORT)}"]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+#         'LOCATION': '127.0.0.1:11211',
+#     }
+# }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -53,7 +67,7 @@ CRON_CLASSES = [
 F_ACCESS_TOKEN = "minutes"
 T_ACCESS_TOKEN = 5
 F_REFRESH_TOKEN = "minutes"
-T_REFRESH_TOKEN = 15
+T_REFRESH_TOKEN = 1440
 
 SIMPLE_JWT = {
     # NOTE: Access tokens should live no longer than 5 minutes,
@@ -169,7 +183,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

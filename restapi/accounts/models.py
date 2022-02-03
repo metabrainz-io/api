@@ -19,11 +19,12 @@ class Roles(models.Model):
 
 
 class UserAccountManager(BaseUserManager):
-    def create_user(self, c_addr, role_id, email=None, password=None):
+    def create_user(self, c_addr, role_id, email=None, password=None, img_path=None):
         user = self.model(
             email=email,
             c_addr=c_addr,
             role_id=role_id,
+            image = img_path
         )
 
         if password is None:
@@ -71,13 +72,23 @@ class UserAccount(AbstractBaseUser):
         max_length=42,
         unique=True,
     )
+    image = models.CharField(
+        verbose_name='user profile image',
+        max_length=200,
+        unique=False,
+        null=True
+    )
+    claims = models.JSONField(
+        verbose_name='references to userclaims',
+        unique=False,
+        null=True
+    )
     role = models.ForeignKey(
         Roles,
         on_delete=models.CASCADE,
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-
     objects = UserAccountManager()
 
     USERNAME_FIELD = 'c_addr'

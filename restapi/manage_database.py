@@ -30,7 +30,7 @@ def suLoad(c_addr):
     db = Database(UserAccount)
     db.createSuperUser(
         c_addr=c_addr.lower(),
-        email="info@doselabs.xyz",
+        email="info@metabrainz.io",
         password=None
     )
 

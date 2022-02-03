@@ -16,9 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/account/', include('accounts.urls')),
-    path('api/assets/', include('token_nfts.urls'))
+    path('api/assets/', include('token_nfts.urls')),
 ]

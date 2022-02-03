@@ -1,0 +1,113 @@
+[
+    {
+        "i": 0,
+        "q": "What animal is Bugsbunny?",
+        "a":[
+            {"answer":"Dragon", "valid": false},
+            {"answer":"Rabbit", "valid": true},
+            {"answer":"Tiger", "valid": false}
+        ]
+    },
+    {
+        "i": 1,
+        "q": "What are the 3 last characters of your crypto address?",
+        "a":[
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false}
+        ]
+    },
+    {
+        "i": 2,
+        "q": "What weeknumber corresponds to <month><day> (mm-dd)?",
+        "a":[
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false}
+        ]
+    },
+    {
+        "i": 3,
+        "q": "What metal is the best conductor of electricity?",
+        "a":[
+            {"answer":"copper", "valid": false},
+            {"answer":"silver", "valid": true},
+            {"answer":"gold", "valid": false}
+        ]
+    },
+    {
+        "i": 4,
+        "q": "Knock knock!",
+        "a":[
+            {"answer":"Hi", "valid": false},
+            {"answer":"Welcome", "valid": false},
+            {"answer":"Who is there?", "valid": true}
+        ]
+    },
+    {
+        "i": 5,
+        "q": "What are you about to claim?",
+        "a":[
+            {"answer":"bluepill", "valid": true},
+            {"answer":"redpill", "valid": false},
+            {"answer":"blackpill", "valid": false}
+        ]
+    },
+    {
+        "i": 6,
+        "q": "What is the opposite of green?",
+        "a":[
+            {"answer":"red", "valid": true},
+            {"answer":"blue", "valid": false},
+            {"answer":"yellow", "valid": false}
+        ]
+    },
+    {
+        "i": 7,
+        "q": "What are the opposites of positive?",
+        "a":[
+            {"answer":"positive (1)", "valid": false},
+            {"answer":"negative (2)", "valid": false},
+            {"answer":"opposite (3)", "valid": false},
+            {"answer":"answers 1 and 2", "valid": false},
+            {"answer":"answers 1 and 3", "valid": false},
+            {"answer":"answers 2 and 3", "valid": true}
+        ]
+    },
+    {
+        "i": 8,
+        "q": "What element do diamonds consist off?",
+        "a":[
+            {"answer":"Carbon", "valid": true},
+            {"answer":"Silver", "valid": false},
+            {"answer":"Lead", "valid": false}
+        ]
+    },
+    {
+        "i": 9,
+        "q": "Who is the richest man?",
+        "a":[
+            {"answer":"Zuckerberg", "valid": false},
+            {"answer":"Musk", "valid": true},
+            {"answer":"Page", "valid": false}
+        ]
+    },
+    {
+        "i": 10,
+        "q": "What Zodiac sign matches <month><day> (mm-dd)?",
+        "a":[
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false}
+        ]
+    },
+    {
+        "i": 11,
+        "q": "If there are <num1> <objs> <math> by <num2>, approximately how many <objs> are there?",
+        "a":[
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false},
+            {"answer":"undefined", "valid": false}
+        ]
+    }
+]
